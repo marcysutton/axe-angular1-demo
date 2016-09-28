@@ -4,7 +4,7 @@ This project is based on the [angular-seed](https://github.com/angular/angular-s
 
 You can use it to quickly bootstrap your angular webapp projects and dev environment for these projects with accessibility testing built-in.
 
-The seed contains a sample AngularJS application and is preconfigured to install the Angular framework and a bunch of development and testing tools for instant web development gratification, including the [axe-core](https://github.com/dequelabs/axe-core) accessibility testing library.
+The seed contains a sample AngularJS application and is preconfigured to install the Angular framework and a bunch of development and testing tools for instant web development gratification, including the [axe-core](https://github.com/dequelabs/axe-core) accessibility testing library and [axe-webdriverjs](https://github.com/dequelabs/axe-webdriverjs) helper.
 
 ## Getting Started
 
@@ -104,7 +104,7 @@ e2e-tests/            --> end-to-end tests
 
 ## Testing
 
-There are two kinds of tests in the axe-angular1-demo application: Unit tests and end-to-end tests.
+There are two kinds of tests in the axe-angular1-demo application: Unit tests and end-to-end tests. The aXe example can be found in the [end-to-end test](./e2e-tests/scenarios.js).
 
 ### Running Unit Tests
 
@@ -178,6 +178,11 @@ the [Java Development Kit (JDK)][jdk] to be installed on your local machine. Che
 
 If JDK is not already installed, you can download it [here][jdk-download].
 
+### Using axe-core
+
+To make the most of accessibility tests, it might be helpful to reference the results object from the aXe API: https://github.com/dequelabs/axe-core/blob/master/doc/API.md#results-object 
+
+The integration test set up in this application returns the aXe results with two violations. To fix them, you would review the aXe results output, make changes that address those violations, and get the test passing.
 
 ### Running the App during Development
 

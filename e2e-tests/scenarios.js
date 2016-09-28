@@ -4,7 +4,6 @@
 
 var AxeBuilder = require('axe-webdriverjs');
 
-var ngA11yTestConfig = require('./ng-click.json');
 var util = require('util');
 
 describe('my app', function() {
