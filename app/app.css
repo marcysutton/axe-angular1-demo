@@ -1,0 +1,49 @@
+/* app css stylesheet */
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+.menu > li {
+  display: inline;
+}
+
+.md-button.md-icon-button.menuBtn {
+  margin-top: 6px;
+  margin-right: 0;
+}
+
+.muppet-list .md-button {
+  color: inherit;
+  text-align: left;
+  width: 100%;
+}
+.muppet-list .selected {
+  color: #03a9f4;
+}
+.face {
+  border-radius: 30px;
+  border: 1px solid #ddd;
+  display: inline-block;
+  margin: 4px 16px; 
+  vertical-align: middle;
+  width: 48px;
+}
+.content-wrapper {
+  position: relative;
+}
+#primary-col {
+  overflow: hidden;
+}
+#primary-col .md-button {
+  margin: 8px auto 16px 0;
+}
+#primary-col .cell {
+  flex: 1 1 auto;
+}
+#primary-col img {
+  display: block;
+  max-width: 100%;
+}

@@ -1,0 +1,29 @@
+<md-toolbar layout="row">
+	<md-button ng-click="toggleSidenav('left')" hide-gt-sm class="md-icon-button menuBtn">
+	  <md-icon aria-label="Menu" md-svg-icon="./menu.svg"></md-icon>
+	</md-button>
+	<h1 layout-align-gt-sm="center center" class="md-toolbar-tools">My Favorite Muppets</h1>
+</md-toolbar>
+<div layout="row" flex class="content-wrapper">
+    <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
+        <md-list class="muppet-list">
+          <md-item ng-repeat="it in muppets">
+            <md-item-content>
+              <md-button ng-click="selectMuppet(it)" ng-class="{'selected' : it === selected }">
+                <img ng-src="{{it.iconurl}}" class="face" alt="">
+                {{it.name}}
+              </md-button>
+            </md-item-content>
+          </md-item>
+        </md-list>
+      </md-sidenav>
+      <div layout="column" flex class="content-wrapper" id="primary-col">
+          <md-content layout="column" flex class="md-padding">
+            <h2>{{selected.name}}</h2>
+            <p>{{selected.content}}</p>
+            <div class="cell">
+              <img ng-src="{{selected.imgurl}}" alt="{{selected.imgalt}}">
+            </div>
+          </md-content>
+      </div>
+  </div>

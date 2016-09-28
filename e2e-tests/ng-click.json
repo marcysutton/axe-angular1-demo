@@ -1,0 +1,34 @@
+{
+ "rules": [
+  {
+   "id": "angular-ng-click",
+   "enabled": true,
+   "metadata": {
+    "description": "Ensures ng-click is used on accessible elements",
+    "help": "ng-click must be used on accessible elements",
+    "helpUrl": "https://example.com/dylang"
+   },
+   "selector": "[ng-click]",
+   "any": [],
+   "all": ["angular-ng-click-focus"],
+   "none": ["focusable-no-name"],
+   "tags": [
+    "wcag2aa", "wcag21", "wcag412"
+   ]
+  }
+ ],
+ "checks": [
+  {
+   "id": "angular-ng-click-focus",
+   "options": [],
+   "evaluate": "function(node) {\n    var tabIndex = node.getAttribute('tabindex'), isFocusable = axe.commons.dom.isFocusable(node) && tabIndex > -1;\nif (!isFocusable) { return false; }\nvar accRoles = ['button', 'checkbox', 'tab', 'menuitem', 'menuitemcheckbox'];\nvar roleAttr = node.getAttribute('role');\nnode.hasAccessibleRole = false;\nfor (var i=0; i<accRoles.length; i++) {\nif (roleAttr && roleAttr === accRoles[i]) {\nnode.hasAccessibleRole = true;\n}\n}\nreturn node.hasAccessibleRole;\n}",
+   "metadata": {
+    "impact": "critical",
+    "messages": {
+      "pass": "ng-click is focusable and has an accessible role",
+      "fail": "ng-click is not focusable or missing an accessible role"
+    }
+  }
+  }
+ ]
+}
